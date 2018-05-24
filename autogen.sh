@@ -3,7 +3,7 @@ gprefix=`which glibtoolize 2>&1 >/dev/null`
 if [ $? -eq 0 ]; then 
   glibtoolize --force
 else
-  libtoolize --force #--ltdl --copy
+  libtoolize --ltdl --copy --force
 fi
 aclocal -I m4
 autoheader
