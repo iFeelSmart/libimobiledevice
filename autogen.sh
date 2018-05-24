@@ -3,11 +3,11 @@ gprefix=`which glibtoolize 2>&1 >/dev/null`
 if [ $? -eq 0 ]; then 
   glibtoolize --force
 else
-  libtoolize --force
+  libtoolize --force #--ltdl --copy
 fi
 aclocal -I m4
 autoheader
-automake --add-missing
+automake --add-missing --copy
 autoconf
 
 if [ -z "$NOCONFIGURE" ]; then
